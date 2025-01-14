@@ -3,9 +3,22 @@
   padding: 0;
 }
 
+body {
+  background-color: grey;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
 #controls-container {
   display: flex;
   align-items: center;
+  background-color: rgb(182, 182, 182);
+  width: fit-content;
+  gap: 40px;
+  padding: 20px;
+  border: 7px solid rgb(255, 162, 22);
 }
 
 .row {
@@ -24,14 +37,19 @@ button {
   font-size: 20px;
   width: 100px;
   height: 80px;
+  background-color: grey;
+  border-radius: 5px;
+  border: none;
+  box-shadow: 3px 3px 5px;
 }
 
 #controls {
-  background-color: yellow;
-  padding: 40px 70px;
+  padding: 30px auto;
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 20px;
+  width: 220px;
 }
 
 
@@ -55,11 +73,13 @@ button {
   width: 20px;
 }
 
-input:checked + .switch {
+
+
+.check:checked + .switch {
   align-items: end;
 }
 
-input {
+.check {
   display: none;
 }
 
@@ -67,5 +87,29 @@ input {
   height: 50px;
   width: 180px;
   background-color: grey;
-  margin: 20px auto;
+  font-size: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+input[type='range'] {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 6px;
+  background-color: rgb(53, 53, 53);
+  border-radius: none;
+  outline: none;
+}
+
+.switch-cont {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#range-cont {
+  width: 100%;
 }
