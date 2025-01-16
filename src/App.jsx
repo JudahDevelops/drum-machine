@@ -130,54 +130,56 @@ class DrumMachine extends React.Component {
   handleKeyDown = (event) => {
     const actionDisplay = document.getElementById('action-display');
 
-    switch (event.key) {
-      case 'q':
-        actionDisplay.innerHTML = this.state.bank ? 'Chord 1' : 'Heater 1';
-        this.audio.heater1.currentTime = 0;
-        this.audio.heater1.play();
-        break;
-      case 'w':
-        actionDisplay.innerHTML = this.state.bank ? 'Chord 2' : 'Heater 2';
-        this.audio.heater2.currentTime = 0;
-        this.audio.heater2.play();
-        break;
-      case 'e':
-        actionDisplay.innerHTML = this.state.bank ? 'Chord 3' : 'Heater 3';
-        this.audio.heater3.currentTime = 0;
-        this.audio.heater3.play();
-        break;
-      case 'a':
-        actionDisplay.innerHTML = this.state.bank ? 'Shaker' : 'Heater 4';
-        this.audio.heater4.currentTime = 0;
-        this.audio.heater4.play();
-        break;
-      case 's':
-        actionDisplay.innerHTML = this.state.bank ? 'Open HH' : 'Clap';
-        this.audio.clap.currentTime = 0;
-        this.audio.clap.play();
-        break;
-      case 'd':
-        actionDisplay.innerHTML = this.state.bank ? 'Closed HH' : 'Open HH';
-        this.audio.openHH.currentTime = 0;
-        this.audio.openHH.play();
-        break;
-      case 'z':
-        actionDisplay.innerHTML = this.state.bank ? 'Punchy Kick' : 'Kick  n\' Hat';
-        this.audio.kickHat.currentTime = 0;
-        this.audio.kickHat.play();
-        break;
-      case 'x':
-        actionDisplay.innerHTML = this.state.bank ? 'Side Stick' : 'Kick';
-        this.audio.kick.currentTime = 0;
-        this.audio.kick.play();
-        break;
-      case 'c':
-        actionDisplay.innerHTML = this.state.bank ? 'Snare' : 'Closed HH';
-        this.audio.closedHH.currentTime = 0;
-        this.audio.closedHH.play();
-        break;
-      default:
-        break;
+    if (this.state.power) {
+      switch (event.key) {
+        case 'q':
+          actionDisplay.innerHTML = this.state.bank ? 'Chord 1' : 'Heater 1';
+          this.audio.heater1.currentTime = 0;
+          this.audio.heater1.play();
+          break;
+        case 'w':
+          actionDisplay.innerHTML = this.state.bank ? 'Chord 2' : 'Heater 2';
+          this.audio.heater2.currentTime = 0;
+          this.audio.heater2.play();
+          break;
+        case 'e':
+          actionDisplay.innerHTML = this.state.bank ? 'Chord 3' : 'Heater 3';
+          this.audio.heater3.currentTime = 0;
+          this.audio.heater3.play();
+          break;
+        case 'a':
+          actionDisplay.innerHTML = this.state.bank ? 'Shaker' : 'Heater 4';
+          this.audio.heater4.currentTime = 0;
+          this.audio.heater4.play();
+          break;
+        case 's':
+          actionDisplay.innerHTML = this.state.bank ? 'Open HH' : 'Clap';
+          this.audio.clap.currentTime = 0;
+          this.audio.clap.play();
+          break;
+        case 'd':
+          actionDisplay.innerHTML = this.state.bank ? 'Closed HH' : 'Open HH';
+          this.audio.openHH.currentTime = 0;
+          this.audio.openHH.play();
+          break;
+        case 'z':
+          actionDisplay.innerHTML = this.state.bank ? 'Punchy Kick' : 'Kick  n\' Hat';
+          this.audio.kickHat.currentTime = 0;
+          this.audio.kickHat.play();
+          break;
+        case 'x':
+          actionDisplay.innerHTML = this.state.bank ? 'Side Stick' : 'Kick';
+          this.audio.kick.currentTime = 0;
+          this.audio.kick.play();
+          break;
+        case 'c':
+          actionDisplay.innerHTML = this.state.bank ? 'Snare' : 'Closed HH';
+          this.audio.closedHH.currentTime = 0;
+          this.audio.closedHH.play();
+          break;
+        default:
+          break;
+      }
     }
   }
   
